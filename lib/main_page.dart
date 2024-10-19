@@ -18,21 +18,28 @@ class MainPage extends StatelessWidget {
               child: Column(
                 children: [
                   Card(
-                    margin: EdgeInsets.fromLTRB(15, 30, 15, 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(Icons.search),
-                        Text(
-                            style: TextStyle(color: Colors.grey),
-                            "Lacak Pesanan & Paket anda disini"),
-                        Container(
-                          width: 25,
-                          height: 25,
-                          color: Colors.green.shade500,
-                          child: Image.asset('assets/images/logowhatsapp.png'),
-                        )
-                      ],
+                    elevation: 1,
+                    margin: EdgeInsets.fromLTRB(15, 20, 15, 10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(Icons.search),
+                          Text(
+                              style: TextStyle(color: Colors.grey),
+                              "Lacak Pesanan & Paket anda disini"),
+                          Container(
+                            width: 25,
+                            height: 25,
+                            color: Colors.green.shade500,
+                            child:
+                                Image.asset('assets/images/logowhatsapp.png'),
+                          )
+                        ],
+                      ),
                     ),
                   ), //card
                   Container(
@@ -46,43 +53,47 @@ class MainPage extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 15, color: Colors.green.shade500)),
                   ),
-                  Container(
+                  Card(
                     margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
-                    width: MediaQuery.sizeOf(context).width,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: [
-                          Colors.green.shade600,
-                          Colors.green.shade400
+                    elevation: 4,
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          gradient: LinearGradient(
+                              colors: [
+                                Colors.green.shade600,
+                                Colors.lightGreen.shade500
+                              ],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                              width:
+                                  ((MediaQuery.sizeOf(context).width / 2) - 10),
+                              margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                              color: Colors.transparent,
+                              child: Text(
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 4,
+                                "Pastikan email anda valid dan terdaftar, serta ubah password anda disini untuk melakukan login dengan email.",
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.white),
+                              )),
+                          Container(
+                              margin: EdgeInsets.all(10),
+                              color: Colors.transparent,
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    "Update",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 13),
+                                  )))
                         ],
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Container(
-                            width:
-                                ((MediaQuery.sizeOf(context).width / 2) - 10),
-                            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            color: Colors.transparent,
-                            child: Text(
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 4,
-                              "Pastikan email anda valid dan terdaftar, serta ubah password anda disini untuk melakukan login dengan email.",
-                              style:
-                                  TextStyle(fontSize: 10, color: Colors.white),
-                            )),
-                        Container(
-                            margin: EdgeInsets.all(10),
-                            color: Colors.transparent,
-                            child: TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "Update",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 13),
-                                )))
-                      ],
+                      ),
                     ),
                   ),
                   Container(
