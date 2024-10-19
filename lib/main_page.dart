@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stateless_statefull/redeem_page.dart';
 
 void main() {
   runApp(const MainPage());
@@ -130,16 +131,23 @@ class MainPage extends StatelessWidget {
                         ),
                         Column(
                           children: [
-                            Container(
-                              width: MediaQuery.sizeOf(context).width / 7,
-                              height: MediaQuery.sizeOf(context).width / 7,
-                              margin: EdgeInsets.fromLTRB(0, 0, 15, 10),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.black12),
-                              child: Icon(
-                                Icons.description_outlined,
-                                color: const Color.fromARGB(255, 85, 119, 86),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                  return redeemPage();
+                                }));
+                              },
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width / 7,
+                                height: MediaQuery.sizeOf(context).width / 7,
+                                margin: EdgeInsets.fromLTRB(0, 0, 15, 10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.black12),
+                                child: Icon(
+                                  Icons.description_outlined,
+                                  color: const Color.fromARGB(255, 85, 119, 86),
+                                ),
                               ),
                             ),
                             Container(
