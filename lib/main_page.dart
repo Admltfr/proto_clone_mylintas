@@ -382,19 +382,3 @@ class MainPage extends StatelessWidget {
                                   TextStyle(fontSize: 10, color: Colors.white),
                             )),
                       ),*/
-
-
-                      /*ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.transparent),
-                        child: Container(
-                           color: Colors.transparent,
-                            margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                            height: 12,
-                            child: Text(
-                              "Update",
-                              style:
-                                  TextStyle(fontSize: 10, color: Colors.white),
-                            )),
-                      ),*/
