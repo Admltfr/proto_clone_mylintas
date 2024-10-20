@@ -70,6 +70,9 @@ flutter:
       - assets/images/shareimage.png
       - assets/images/commentsimage.png
       - assets/images/logowhatsapp.png
+      - assets/images/mylintasimage1.jpg
+      - assets/images/mylintasimage2.jpg
+      - assets/images/mylintasimage3.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

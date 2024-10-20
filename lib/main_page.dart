@@ -132,8 +132,9 @@ class MainPage extends StatelessWidget {
                         Column(
                           children: [
                             GestureDetector(
-                              onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                              onTap: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
                                   return redeemPage();
                                 }));
                               },
@@ -272,6 +273,7 @@ class MainPage extends StatelessWidget {
                           ],
                         ),
                         Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                               width: MediaQuery.sizeOf(context).width / 7,
@@ -290,7 +292,7 @@ class MainPage extends StatelessWidget {
                                 height: MediaQuery.sizeOf(context).width / 11,
                                 margin: EdgeInsets.fromLTRB(0, 0, 15, 0),
                                 child: Text(
-                                  "Redeem",
+                                  "Pesan",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(fontSize: 10),
                                 )),
@@ -315,7 +317,7 @@ class MainPage extends StatelessWidget {
                                 height: MediaQuery.sizeOf(context).width / 11,
                                 margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
                                 child: Text(
-                                  "Redeem",
+                                  "Cara Bayar",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(fontSize: 10),
                                 )),
@@ -330,27 +332,32 @@ class MainPage extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          SizedBox(
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5)),
                             width: MediaQuery.sizeOf(context).width,
                             height: MediaQuery.sizeOf(context).width / 3,
                             child: Image.asset(
-                              'assets/images/mountain.jpg',
+                              'assets/images/mylintasimage1.jpg',
                               fit: BoxFit.fill,
                             ),
                           ),
-                          SizedBox(
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5)),
                             width: MediaQuery.sizeOf(context).width,
                             height: MediaQuery.sizeOf(context).width / 3,
                             child: Image.asset(
-                              'assets/images/beach.jpg',
-                              fit: BoxFit.fill,
-                            ),
+                                'assets/images/mylintasimage2.jpg',
+                                fit: BoxFit.fill),
                           ),
-                          SizedBox(
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5)),
                             width: MediaQuery.sizeOf(context).width,
                             height: MediaQuery.sizeOf(context).width / 3,
                             child: Image.asset(
-                              'assets/images/forest.jpg',
+                              'assets/images/mylintasimage3.jpg',
                               fit: BoxFit.fill,
                             ),
                           ),
