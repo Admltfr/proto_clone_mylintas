@@ -5,12 +5,18 @@ void main() {
   runApp(const MainPage());
 }
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
   @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
           alignment: Alignment.bottomCenter,
@@ -332,28 +338,26 @@ class MainPage extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5)),
+                          SizedBox(
                             width: MediaQuery.sizeOf(context).width,
                             height: MediaQuery.sizeOf(context).width / 3,
-                            child: Image.asset(
-                              'assets/images/mylintasimage1.jpg',
-                              fit: BoxFit.fill,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8)),
+                              child: Image.asset(
+                                'assets/images/mylintasimage1.jpg',
+                                fit: BoxFit.fill,
+                              ),
                             ),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5)),
+                          SizedBox(
                             width: MediaQuery.sizeOf(context).width,
                             height: MediaQuery.sizeOf(context).width / 3,
                             child: Image.asset(
                                 'assets/images/mylintasimage2.jpg',
                                 fit: BoxFit.fill),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5)),
+                          SizedBox(
                             width: MediaQuery.sizeOf(context).width,
                             height: MediaQuery.sizeOf(context).width / 3,
                             child: Image.asset(
@@ -365,7 +369,38 @@ class MainPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Divider(),
+
+                  Container(
+                    width: MediaQuery.sizeOf(context).width,
+                    margin: EdgeInsets.fromLTRB(10, 30, 10, 50),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 20, 10, 10),
+                              child: Icon(
+                                Icons.calendar_today,
+                                color: Colors.lightBlue.shade600,
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Tanggal Pergi"),
+                                Text("Monday, 21 October 2024", style: TextStyle(fontWeight: FontWeight.bold),)
+                              ],
+                            ),
+                            
+                          ],
+                        ),
+                        Row(
+                          children: [Container(), Column()],
+                        )
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
