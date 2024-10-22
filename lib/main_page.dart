@@ -389,14 +389,77 @@ class _MainPageState extends State<MainPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Tanggal Pergi"),
-                                Text("Monday, 21 October 2024", style: TextStyle(fontWeight: FontWeight.bold),)
+                                Text(
+                                  "Monday, 21 October 2024",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12),
+                                )
                               ],
                             ),
-                            
                           ],
                         ),
                         Row(
-                          children: [Container(), Column()],
+                          children: [
+                            Container(
+                              margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.circle_outlined,size: 20,color: Colors.amber.shade800,),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
+                                  Icon(Icons.circle_outlined,size: 20,color: Colors.lightBlue.shade600),
+                                ],
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Cabang Asal"),
+                                      Text(
+                                        "KLIK DI SINI UNTUK CABANG ASAL",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 12),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Cabang Tujuan"),
+                                      Text(
+                                        "KLIK DI SINI UNTUK CABANG TUJUAN",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 12),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         )
                       ],
                     ),
