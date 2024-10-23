@@ -13,6 +13,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final TextEditingController searchcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,9 +36,20 @@ class _MainPageState extends State<MainPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Icon(Icons.search),
-                          Text(
-                              style: TextStyle(color: Colors.grey),
-                              "Lacak Pesanan & Paket anda disini"),
+                          Container(
+                            width: MediaQuery.sizeOf(context).width - 100,
+                            height: 30,
+                            child: TextFormField(
+                              controller: searchcontroller,
+                              decoration: InputDecoration(
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.never,
+                                labelText: "Lacak Pesanan & Paket anda disini",
+                                labelStyle: TextStyle(
+                                    color: Colors.black38, fontSize: 12),
+                              ),
+                            ),
+                          ),
                           Container(
                             width: 25,
                             height: 25,
@@ -120,7 +132,7 @@ class _MainPageState extends State<MainPage> {
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.black12),
                               child: Icon(
-                                Icons.description_outlined,
+                                Icons.card_membership,
                                 color: const Color.fromARGB(255, 85, 119, 86),
                               ),
                             ),
@@ -152,7 +164,7 @@ class _MainPageState extends State<MainPage> {
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.black12),
                                 child: Icon(
-                                  Icons.description_outlined,
+                                  Icons.card_giftcard,
                                   color: const Color.fromARGB(255, 85, 119, 86),
                                 ),
                               ),
@@ -203,7 +215,7 @@ class _MainPageState extends State<MainPage> {
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.black12),
                               child: Icon(
-                                Icons.description_outlined,
+                                Icons.person,
                                 color: const Color.fromARGB(255, 85, 119, 86),
                               ),
                             ),
@@ -223,9 +235,9 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Container(
                     color: Colors.transparent,
-                    margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    margin: EdgeInsets.fromLTRB(29, 7, 20, 0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -238,7 +250,7 @@ class _MainPageState extends State<MainPage> {
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.black12),
                               child: Icon(
-                                Icons.description_outlined,
+                                Icons.mail,
                                 color: const Color.fromARGB(255, 85, 119, 86),
                               ),
                             ),
@@ -258,19 +270,19 @@ class _MainPageState extends State<MainPage> {
                             Container(
                               width: MediaQuery.sizeOf(context).width / 7,
                               height: MediaQuery.sizeOf(context).width / 7,
-                              margin: EdgeInsets.fromLTRB(0, 0, 15, 10),
+                              margin: EdgeInsets.fromLTRB(0, 0, 5, 10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.black12),
                               child: Icon(
-                                Icons.description_outlined,
+                                Icons.credit_card,
                                 color: const Color.fromARGB(255, 85, 119, 86),
                               ),
                             ),
                             Container(
                                 width: MediaQuery.sizeOf(context).width / 7,
                                 height: MediaQuery.sizeOf(context).width / 11,
-                                margin: EdgeInsets.fromLTRB(0, 0, 15, 0),
+                                margin: EdgeInsets.fromLTRB(10, 0, 15, 0),
                                 child: Text(
                                   "Cara Bayar",
                                   textAlign: TextAlign.center,
@@ -278,57 +290,7 @@ class _MainPageState extends State<MainPage> {
                                 )),
                           ],
                         ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: MediaQuery.sizeOf(context).width / 7,
-                              height: MediaQuery.sizeOf(context).width / 7,
-                              margin: EdgeInsets.fromLTRB(0, 0, 15, 10),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.black12),
-                              child: Icon(
-                                Icons.description_outlined,
-                                color: const Color.fromARGB(255, 85, 119, 86),
-                              ),
-                            ),
-                            Container(
-                                width: MediaQuery.sizeOf(context).width / 7,
-                                height: MediaQuery.sizeOf(context).width / 11,
-                                margin: EdgeInsets.fromLTRB(0, 0, 15, 0),
-                                child: Text(
-                                  "Pesan",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 10),
-                                )),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Container(
-                              width: MediaQuery.sizeOf(context).width / 7,
-                              height: MediaQuery.sizeOf(context).width / 7,
-                              margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.black12),
-                              child: Icon(
-                                Icons.description_outlined,
-                                color: const Color.fromARGB(255, 85, 119, 86),
-                              ),
-                            ),
-                            Container(
-                                width: MediaQuery.sizeOf(context).width / 7,
-                                height: MediaQuery.sizeOf(context).width / 11,
-                                margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                child: Text(
-                                  "Cara Bayar",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 10),
-                                )),
-                          ],
-                        ),
+                        
                       ],
                     ),
                   ),
@@ -405,20 +367,38 @@ class _MainPageState extends State<MainPage> {
                               margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
                               child: Column(
                                 children: [
-                                  Icon(Icons.circle_outlined,size: 20,color: Colors.amber.shade800,),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.fiber_manual_record_outlined,size: 3),
-                                  Icon(Icons.circle_outlined,size: 20,color: Colors.lightBlue.shade600),
+                                  Icon(
+                                    Icons.circle_outlined,
+                                    size: 20,
+                                    color: Colors.amber.shade800,
+                                  ),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.fiber_manual_record_outlined,
+                                      size: 3),
+                                  Icon(Icons.circle_outlined,
+                                      size: 20,
+                                      color: Colors.lightBlue.shade600),
                                 ],
                               ),
                             ),
@@ -469,20 +449,43 @@ class _MainPageState extends State<MainPage> {
             ),
             Container(
               margin: EdgeInsets.fromLTRB(15, 0, 15, 10),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green.shade500),
-                child: Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.sizeOf(context).width,
-                  height: 25,
-                  color: Colors.transparent,
-                  child: Text(
-                    "Cari tiket",
-                    style: TextStyle(color: Colors.white, fontSize: 12),
-                  ),
-                ),
+              child: Builder(
+                builder: (BuildContext context) {
+                  return ElevatedButton(
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          
+                            duration: Duration(seconds: 1),
+                            margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                            behavior: SnackBarBehavior.floating,
+                            backgroundColor: Colors.red.shade500,
+                            content: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Icon(Icons.info,color: Colors.white,),
+                                Text(
+                                  'Anda belum memilih cabang asal',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ],
+                            )),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green.shade500),
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: MediaQuery.sizeOf(context).width,
+                      height: 25,
+                      color: Colors.transparent,
+                      child: Text(
+                        "Cari tiket",
+                        style: TextStyle(color: Colors.white, fontSize: 12),
+                      ),
+                    ),
+                  );
+                }
               ),
             ),
           ],
