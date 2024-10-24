@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_stateless_statefull/main_page.dart';
 
 void main() {
-  runApp(LoginPage());
+  runApp(loginPage());
 }
 
-class LoginPage extends StatelessWidget {
+class loginPage extends StatelessWidget {
   final _codeKey = GlobalKey<FormState>();
 
   final TextEditingController emailController = TextEditingController();
 
   final TextEditingController passwordController = TextEditingController();
-  LoginPage({super.key});
+  loginPage({super.key});
 
   @override
   Widget build(BuildContext context) {

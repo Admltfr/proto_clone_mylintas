@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const historyPage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class historyPage extends StatelessWidget {
+  const historyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
